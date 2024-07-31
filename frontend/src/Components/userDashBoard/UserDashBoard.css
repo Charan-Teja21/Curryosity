@@ -1,0 +1,50 @@
+.first {
+  padding-left: 70px;
+}
+
+.userFirstName {
+  font-size: 70px;
+}
+
+.head2 {
+  display: inline;
+  margin-left: 70px;
+  padding-left: 6px;
+  padding-right: 6px;
+  background-color: #ff943c;
+  color: white;
+  border-radius: 5px;
+}
+
+.fileSelect {
+  padding-top: 5px;
+  max-width: 250px;
+}
+
+.fileSelect:hover {
+  border: none;
+  box-shadow: none;
+}
+
+.userImage {
+  justify-content: center;
+  display: flex;
+  max-width: 300px;
+}
+
+.uimgdiv {
+  display: flex;
+}
+
+.newRecipe{
+  background-color: orange;
+}
+
+.newRecipe:focus,
+.newRecipe:active{
+  border: none;
+}
+
+.elements{
+  justify-content: center;
+}

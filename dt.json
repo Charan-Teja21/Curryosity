@@ -1,0 +1,568 @@
+{
+  "first":[
+    
+    {
+      "name": "Spicy Chicken Biryani",
+  "description": "Aromatic basmati rice cooked with tender chicken, infused with traditional spices and served with raita",
+  "image": "https://www.indianhealthyrecipes.com/wp-content/uploads/2021/12/chicken-biryani.jpg.webp",
+  "rating": 4.5,
+  "price": 10.99,
+  "id": "604a"
+
+  },
+  {
+    "name": "Crispy Chicken Tenders",
+    "description": "Golden and crispy chicken tenders served with a tangy dipping sauce",
+    "image": "https://www.wellplated.com/wp-content/uploads/2023/01/Air-Fryer-Chicken-Tenders-Recipe.jpg",
+    "rating": 4,
+    "price": 7.99,
+    "id": "603f"
+  },
+  {
+    "name": "Spicy Buffalo Wings",
+    "description": "Classic buffalo wings with a spicy kick, served with blue cheese dressing",
+    "image": "https://www.allrecipes.com/thmb/vho2-TnMVMGEn6saATobWJHGTPQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/24087-restaurant-style-buffalo-chicken-wings-DDMFS-4x3-861e36c713264f3a9db8ba02d3afbea1.jpg",
+    "rating": 4.2,
+    "price": 8.99,
+    "id": "2b3e"
+  }
+],
+  "nonveg": [
+    {
+      "name": "Crispy Chicken Tenders",
+      "description": "Golden and crispy chicken tenders served with a tangy dipping sauce",
+      "image": "https://www.wellplated.com/wp-content/uploads/2023/01/Air-Fryer-Chicken-Tenders-Recipe.jpg",
+      "rating": 4,
+      "price": 7.99,
+      "id": "603f"
+    },
+    {
+      "name": "Spicy Buffalo Wings",
+      "description": "Classic buffalo wings with a spicy kick, served with blue cheese dressing",
+      "image": "https://www.allrecipes.com/thmb/vho2-TnMVMGEn6saATobWJHGTPQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/24087-restaurant-style-buffalo-chicken-wings-DDMFS-4x3-861e36c713264f3a9db8ba02d3afbea1.jpg",
+      "rating": 4.2,
+      "price": 8.99,
+      "id": "2b3e"
+    },
+    {
+      "name": "Loaded Nachos with Beef",
+      "description": "Nachos topped with seasoned beef, melted cheese, salsa, and guacamole",
+      "image": "https://www.daisybrand.com/wp-content/uploads/2019/12/LOADED-BEEF-NACHOS-770x628.jpg",
+      "rating": 4.5,
+      "price": 9.99,
+      "id": "9b1f"
+    },
+    {
+      "name": "Cheesy Bacon Fries",
+      "description": "Crispy fries loaded with melted cheese and crispy bacon bits",
+      "image": "https://www.dinneratthezoo.com/wp-content/uploads/2019/12/cheese-fries-5.jpg",
+      "rating": 4.3,
+      "price": 6.99,
+      "id": "4cf2"
+    },
+    {
+      "name": "Sausage and Pepperoni Pizza",
+      "description": "Classic pizza topped with savory sausage and spicy pepperoni slices",
+      "image": "https://www.asweetpeachef.com/wp-content/uploads/2010/09/Sausage-Pepperoni-Pizza-15-500x375.jpg",
+      "rating": 4.8,
+      "price": 11.99,
+      "id": "8c88"
+    },
+    {
+      "name": "BBQ Pulled Pork Sliders",
+      "description": "Mini sliders filled with tender BBQ pulled pork and coleslaw",
+      "image": "https://woodlandfoods.com/img/WF_Images/h424-bbq-pulled-pork-sliders-1.jpg",
+      "rating": 4.4,
+      "price": 10.99,
+      "id": "b057"
+    },
+    {
+      "name": "Garlic Parmesan Chicken Wings",
+      "description": "Chicken wings coated in a garlic parmesan sauce, served with ranch dressing",
+      "image": "https://thebigmansworld.com/wp-content/uploads/2022/11/garlic-parmesan-wings-recipe.jpg",
+      "rating": 4.1,
+      "price": 8.49,
+      "id": "8197"
+    },
+    {
+      "name": "Beef Chili Cheese Dogs",
+      "description": "Grilled hot dogs smothered in beef chili and melted cheese",
+      "image": "https://www.simplyrecipes.com/thmb/7ROH4eqjTVeOIhpR4ZWzLUe4CHQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2010__05__chili-dog-horiz-a-1600-1a1f025054124cd886baab5b14d8d5b6.jpg",
+      "rating": 4.6,
+      "price": 7.79,
+      "id": "a5fa"
+    },
+    {
+      "name": "Jalapeno Popper Bites",
+      "description": "Bite-sized jalapeno poppers filled with cream cheese, wrapped in crispy bacon",
+      "image": "https://www.thegunnysack.com/wp-content/uploads/2020/08/Jalapeno-Popper-Bites-Recipe.jpg",
+      "rating": 4.2,
+      "price": 9.29,
+      "id": "9262"
+    },
+    {
+      "name": "Shrimp Tacos",
+      "description": "Tacos filled with seasoned shrimp, cabbage slaw, and spicy mayo",
+      "image": "https://pinchofyum.com/wp-content/uploads/Shrimp-Tacos-with-Slaw-Square.jpg",
+      "rating": 4.7,
+      "price": 12.99,
+      "id": "33bc"
+    }
+  ],
+  "veg": [
+    {
+      "name": "Vegetarian Spring Rolls",
+      "description": "Crispy spring rolls filled with a mix of veggies, served with sweet chili sauce",
+      "image": "https://www.thecookingcollective.com.au/wp-content/uploads/2022/08/Vegetable-Spring-Rolls-2-1.jpg",
+      "rating": 4.2,
+      "price": 5.99,
+      "id": "8fbd"
+    },
+    {
+      "name": "Margherita Pizza",
+      "description": "Classic pizza with tomato, mozzarella, and fresh basil on a thin crust",
+      "image": "https://images.prismic.io/eataly-us/ed3fcec7-7994-426d-a5e4-a24be5a95afd_pizza-recipe-main.jpg?auto=compress,format",
+      "rating": 4.5,
+      "price": 8.49,
+      "id": "6203"
+    },
+    {
+      "name": "Spinach and Feta Stuffed Mushrooms",
+      "description": "Mushroom caps stuffed with spinach, feta cheese, and breadcrumbs",
+      "image": "https://www.wholesomeyum.com/wp-content/uploads/2016/06/wholesomeyum-low-carb-spinach-stuffed-mushrooms-recipe-with-feta-cheese-and-garlic-32.jpg",
+      "rating": 4,
+      "price": 6.99,
+      "id": "4b3c"
+    },
+    {
+      "name": "Cheese Nachos with Guacamole",
+      "description": "Nachos topped with melted cheese and served with fresh guacamole",
+      "image": "https://img.taste.com.au/u6U4AHfA/w720-h480-cfill-q80/taste/2016/11/vegetarian-nachos-with-guacamole-86796-1.jpeg",
+      "rating": 4.6,
+      "price": 11.99,
+      "id": "0106"
+    },
+    {
+      "name": "Caprese Skewers",
+      "description": "Skewers with cherry tomatoes, mozzarella, and basil drizzled with balsamic glaze",
+      "image": "https://bellyfull.net/wp-content/uploads/2020/06/Caprese-Skewers-blog-2.jpg",
+      "rating": 4.3,
+      "price": 9.99,
+      "id": "8013"
+    },
+    {
+      "name": "Vegetable Samosas",
+      "description": "Flaky pastry filled with spiced mixed vegetables, served with mint chutney",
+      "image": "https://cookingwithparita.com/wp-content/uploads/2022/04/F4A6412.jpg",
+      "rating": 4.7,
+      "price": 7.79,
+      "id": "9306"
+    },
+    {
+      "name": "Crispy Zucchini Fries",
+      "description": "Zucchini sticks coated in breadcrumbs and fried until golden and crispy",
+      "image": "https://therecipecritic.com/wp-content/uploads/2022/06/zucchinifries-750x1000.jpg",
+      "rating": 4.5,
+      "price": 10.49,
+      "id": "1753"
+    },
+    {
+      "name": "Mushroom and Onion Flatbread",
+      "description": "Flatbread topped with sautéed mushrooms, caramelized onions, and cheese",
+      "image": "https://peasandcrayons.com/wp-content/uploads/2018/03/caramelized-mushroom-flatbread-pizza-recipe-2.jpg",
+      "rating": 4.1,
+      "price": 8.99,
+      "id": "2db3"
+    },
+    {
+      "name": "Vegetarian Hot Dogs",
+      "description": "Grilled vegetarian hot dogs with your choice of toppings",
+      "image": "https://www.chefkunalkapur.com/wp-content/uploads/2022/02/Hot-Dog-scaled.jpg?v=1645164288",
+      "rating": 4.8,
+      "price": 7.29,
+      "id": "65a9"
+    }
+  ],
+  "drinks": [
+    {
+      "name": "Classic Cola",
+      "description": "The timeless carbonated cola drink with a refreshing taste",
+      "image": "https://www.coca-cola.com/content/dam/onexp/in/en/home-page-test-img/brands/coca-cola/Coke_234x700.png",
+      "rating": 4,
+      "price": 3.99,
+      "id": "baa9"
+    },
+    {
+      "name": "Butterbeer",
+      "description": "A magical and sweet non-alcoholic drink with a hint of buttery flavor",
+      "image": "https://mojo.generalmills.com/api/public/content/j-TC0jneAUiZQWqeg0wp2g_gmi_hi_res_jpeg.jpeg?v=1e0aad00&t=466b54bb264e48b199fc8e83ef1136b4",
+      "rating": 4.5,
+      "price": 5.49,
+      "id": "2aea"
+    },
+    {
+      "name": "Iced Lemonade",
+      "description": "Cold and tangy lemonade with a splash of citrus goodness",
+      "image": "https://static.toiimg.com/thumb/84339280.cms?imgsize=327880&width=800&height=800",
+      "rating": 4.2,
+      "price": 4.49,
+      "id": "4f03"
+    },
+    {
+      "name": "Frozen Fruit Punch",
+      "description": "A fruity and icy blend of various fruits in a refreshing slushy form",
+      "image": "https://www.thedailymeal.com/img/gallery/frozen-fruit-punch-slushies/Frozen_Fruit_Punch_Slushie_0.jpg",
+      "rating": 4.8,
+      "price": 6.99,
+      "id": "bc99"
+    },
+    {
+      "name": "Mint Mojito",
+      "description": "A cooling and minty non-alcoholic mojito with a splash of lime",
+      "image": "https://www.simplyrecipes.com/thmb/i-isg1NjF2vuJi3f90HBsZZZWd0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2017__06__mojito-vertical-a-1800-51e66b7f72bc49e2a82c5d2ef48b8825.jpg",
+      "rating": 4.3,
+      "price": 5.99,
+      "id": "61c0"
+    },
+    {
+      "name": "Sparkling Raspberry Lemonade",
+      "description": "Bubbly lemonade infused with the sweet and tart flavors of raspberries",
+      "image": "https://www.frugalmomeh.com/wp-content/uploads/2016/07/sparkling-raspberry-lemonade-2.jpg",
+      "rating": 4.6,
+      "price": 5.79,
+      "id": "c751"
+    },
+    {
+      "name": "Caramel Popcorn Shake",
+      "description": "Creamy milkshake blended with caramel popcorn for a unique and indulgent flavor",
+      "image": "https://slojo.co.za/wp-content/uploads/2023/11/CaramelPopcorn-1.png",
+      "rating": 4.4,
+      "price": 7.49,
+      "id": "4294"
+    },
+    {
+      "name": "Coconut Pineapple Smoothie",
+      "description": "A tropical delight with coconut milk, pineapple, and a hint of sweetness",
+      "image": "https://mysolluna.com/wp-content/uploads/2017/08/VERTICAL-IMAGE-Creamy-Pineapple-Coconut-Smoothie-07-copy.jpg",
+      "rating": 4.7,
+      "price": 6.29,
+      "id": "9f9a"
+    },
+    {
+      "name": "Cherry Limeade Slush",
+      "description": "Slushy drink with the perfect balance of cherry and lime flavors",
+      "image": "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_1000,h_1500/https://thefarmgirlgabs.com/wp-content/uploads/2015/08/Cherry-Limeade-Slush-feature-6.jpg",
+      "rating": 4.1,
+      "price": 4.99,
+      "id": "8b68"
+    },
+    {
+      "name": "Cucumber Mint Cooler",
+      "description": "Refreshing cucumber and mint cooler to beat the heat",
+      "image": "https://www.davidlebovitz.com/wp-content/uploads/2020/06/Cucumber-cooler-mint-lime-drink-recipe-2.jpg",
+      "rating": 4.9,
+      "price": 6.79,
+      "id": "167d"
+    }
+  ],
+  "users": [
+    {
+      "firstname": "Maka",
+      "lastname": "Charan",
+      "username": "Charan2000",
+      "password": "$2a$05$sWl02iA8MTwIPQwiAM7YJOgPsy5g5cdVWbwmimpjCVVpcYj.cTlne",
+      "email": "charant921@gmail.com",
+      "phone": "9704176019",
+      "id": "1"
+    },
+    {
+      "firstname": "Maka",
+      "lastname": "Charan",
+      "username": "Charan2009",
+      "password": "$2a$05$ijfQYndzYLeVkbXofoSR3eXNwL7mr1mUDJ0c.Xwl2hV34GLPz48fC",
+      "email": "rajuramavath8563@gmail.com",
+      "phone": "9704176019",
+      "id": "2"
+    },
+    {
+      "firstname": "Maka",
+      "lastname": "Charan",
+      "username": "CharanTeja",
+      "password": "$2a$05$g60FYqWrU557JS.icLkPe.luEupw5dpKYsA.TVLDT2yAxltczz1Ce",
+      "email": "charant921@gmail.com",
+      "phone": "9704176019",
+      "id": "3"
+    },
+    {
+      "id": "7ae2",
+      "firstname": "fuaifa",
+      "lastname": "bkjefbkef",
+      "username": "Charana",
+      "password": "$2a$05$hjKBH4jPggyOCPhDw0RfuuGdvK3NUt5eBjvdp./Bo3MAyr9H2atse",
+      "email": "charant921@gmail.com",
+      "phone": "5675432241"
+    },
+    {
+      "id": "c932",
+      "title": "DF",
+      "image": {
+        "0": {}
+      },
+      "foodType": "egg",
+      "procedure": "SADVFDGFB",
+      "description": "SDVF"
+    },
+    {
+      "id": "68b4",
+      "title": "DF",
+      "image": {
+        "0": {}
+      },
+      "foodType": "egg",
+      "procedure": "SADVFDGFB",
+      "description": "SDVF"
+    }
+  ],
+  "data": [
+    {
+      "id": "1",
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      }
+    },
+    {
+      "id": "2",
+      "title": "Mens Casual Premium Slim Fit T-Shirts ",
+      "price": 22.3,
+      "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "rating": {
+        "rate": 4.1,
+        "count": 259
+      }
+    },
+    {
+      "id": "3",
+      "title": "Mens Cotton Jacket",
+      "price": 55.99,
+      "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+      "rating": {
+        "rate": 4.7,
+        "count": 500
+      }
+    },
+    {
+      "id": "4",
+      "title": "Mens Casual Slim Fit",
+      "price": 15.99,
+      "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+      "rating": {
+        "rate": 2.1,
+        "count": 430
+      }
+    },
+    {
+      "id": "5",
+      "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+      "price": 695,
+      "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+      "category": "jewelery",
+      "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+      "rating": {
+        "rate": 4.6,
+        "count": 400
+      }
+    },
+    {
+      "id": "6",
+      "title": "Solid Gold Petite Micropave ",
+      "price": 168,
+      "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
+      "category": "jewelery",
+      "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 70
+      }
+    },
+    {
+      "id": "7",
+      "title": "White Gold Plated Princess",
+      "price": 9.99,
+      "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+      "category": "jewelery",
+      "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
+      "rating": {
+        "rate": 3,
+        "count": 400
+      }
+    },
+    {
+      "id": "8",
+      "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+      "price": 10.99,
+      "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
+      "category": "jewelery",
+      "image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
+      "rating": {
+        "rate": 1.9,
+        "count": 100
+      }
+    },
+    {
+      "id": "9",
+      "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+      "price": 64,
+      "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+      "rating": {
+        "rate": 3.3,
+        "count": 203
+      }
+    },
+    {
+      "id": "10",
+      "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+      "price": 109,
+      "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
+      "rating": {
+        "rate": 2.9,
+        "count": 470
+      }
+    },
+    {
+      "id": "11",
+      "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
+      "price": 109,
+      "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+      "rating": {
+        "rate": 4.8,
+        "count": 319
+      }
+    },
+    {
+      "id": "12",
+      "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
+      "price": 114,
+      "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
+      "rating": {
+        "rate": 4.8,
+        "count": 400
+      }
+    },
+    {
+      "id": "13",
+      "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
+      "price": 599,
+      "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
+      "rating": {
+        "rate": 2.9,
+        "count": 250
+      }
+    },
+    {
+      "id": "14",
+      "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
+      "price": 999.99,
+      "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+      "rating": {
+        "rate": 2.2,
+        "count": 140
+      }
+    },
+    {
+      "id": "15",
+      "title": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
+      "price": 56.99,
+      "description": "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
+      "category": "women's clothing",
+      "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
+      "rating": {
+        "rate": 2.6,
+        "count": 235
+      }
+    },
+    {
+      "id": "16",
+      "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+      "price": 29.95,
+      "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
+      "category": "women's clothing",
+      "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
+      "rating": {
+        "rate": 2.9,
+        "count": 340
+      }
+    },
+    {
+      "id": "17",
+      "title": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
+      "price": 39.99,
+      "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
+      "category": "women's clothing",
+      "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
+      "rating": {
+        "rate": 3.8,
+        "count": 679
+      }
+    },
+    {
+      "id": "18",
+      "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
+      "price": 9.85,
+      "description": "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
+      "category": "women's clothing",
+      "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
+      "rating": {
+        "rate": 4.7,
+        "count": 130
+      }
+    },
+    {
+      "id": "19",
+      "title": "Opna Women's Short Sleeve Moisture",
+      "price": 7.95,
+      "description": "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort",
+      "category": "women's clothing",
+      "image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
+      "rating": {
+        "rate": 4.5,
+        "count": 146
+      }
+    },
+    {
+      "id": "20",
+      "title": "DANVOUY Womens T Shirt Casual Cotton Short",
+      "price": 12.99,
+      "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
+      "category": "women's clothing",
+      "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
+      "rating": {
+        "rate": 3.6,
+        "count": 145
+      }
+    }
+  ]
+}

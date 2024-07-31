@@ -1,0 +1,27 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.recipe{
+  margin-top: 60px;
+}
+
+.he{
+  color: #fe964b;
+}
+
+.hea{
+  background-color: #ebc76b;
+}
+input[type="radio"] {
+  transform: scale(1.5); /* Adjust the scale factor as needed */
+  margin-right: 10px; /* Add some spacing between the radio button and its label */
+}
+.review{
+  background-color: transparent;
+}
+.stars{
+  display: flex;
+}

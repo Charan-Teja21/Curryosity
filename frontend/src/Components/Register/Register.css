@@ -1,0 +1,42 @@
+.k {
+  gap: 10px;
+}
+
+.Form {
+  border-radius: 10px;
+  background-color: #f3d8c2;
+  border: 1px solid black;
+  min-width: 350px;
+  padding: 5px;
+}
+
+.bn{
+  background-color: #fe964b;
+  font-weight: bolder;
+  color: white;
+}
+
+.bn:hover{
+  color: black;
+  background-color: #fef1e7;
+}
+
+input:hover,
+select:hover {
+  border: 1px solid black;
+  box-shadow: 1px 1px 3px black;
+}
+
+.Register {
+  background-color: #ffffff;
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+
+.contain {
+  background-color: #FBF6F2;
+}
+
+label {
+  text-align: left;
+}

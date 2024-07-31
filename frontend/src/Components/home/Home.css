@@ -1,0 +1,34 @@
+*{
+  margin: 0px;
+  padding:0px;
+  box-sizing: border-box;
+}
+
+.home{
+  padding-top: 80px;
+}
+
+.con1{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 100px;
+}
+.Nonveg{
+  width: 100%;
+}
+.imgf1{
+  width: 80%;
+}
+.main1{
+  color: #fc791a;
+}
+.main2{
+  background-color: #fc791a;
+  padding-bottom: 45px;
+}
+@media screen and (min-width:600px){
+  .mm{
+      display:flex;
+      justify-content: space-evenly;
+  }
+}

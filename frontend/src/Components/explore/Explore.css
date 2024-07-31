@@ -1,0 +1,87 @@
+.navigation {
+  background: rgb(252, 214, 199);
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  border-bottom: 2.5px solid black;
+  z-index: -1;
+}
+
+.cardImg {
+  border: none;
+  height: 210px;
+}
+
+.product_image {
+  height: 210px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.cd {
+  border: 1.7px solid rgb(204, 204, 252);
+}
+
+.cd:hover {
+  border: 1.7px solid black;
+}
+
+.search_image {
+  background: white;
+}
+
+.form_input {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  max-width: 203px;
+  display: flex;
+  border: none;
+}
+
+.form_input:hover,
+.form_input:active,
+.form_input:focus-visible {
+  border: none;
+  box-shadow: none;
+}
+
+.form_button {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: none;
+}
+
+.icon {
+  color: rgb(85, 71, 184);
+}
+
+.but {
+  background: rgb(132, 116, 255);
+  color: black;
+  font-size: larger;
+}
+
+.but:hover {
+  background: rgba(132, 116, 255, 0.574);
+}
+
+.con {
+  margin-top: 120px;
+  background-color: #faf6f2;
+}
+
+.inp {
+  border: 2px solid blatrck;
+  border-radius: 30px;
+}
+
+.frm {
+  margin: auto;
+  display: flex;
+  height: 60px;
+}

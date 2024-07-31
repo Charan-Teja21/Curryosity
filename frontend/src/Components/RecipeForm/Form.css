@@ -1,0 +1,96 @@
+.k {
+  gap: 10px;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+}
+
+select:hover {
+  border: 1px solid black;
+  box-shadow: 1px 1px 3px black;
+}
+
+.signup {
+  background-color: #ffffff;
+}
+
+.contain {
+  background-color: #FBF6F2;
+  padding-bottom: 50px;
+}
+
+.recipeForm{
+  padding-top: 70px;
+}
+
+input[type='radio'] {
+  width: 10px;
+}
+
+label {
+  text-align: left;
+}
+
+/* Form.css */
+
+/* Style for the radio container */
+.radio-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Style for the radio input */
+.radio-input {
+  margin-right: 5px;
+}
+
+/* Style for the radio label */
+.radio-label {
+  margin-right: 15px;
+  font-size: 16px;
+}
+
+/* Style for the radio dot */
+.radio-dot {
+  height: 20px;
+  width: 20px;
+  background-color: #ddd;
+  border-radius: 50%;
+  position: relative;
+}
+
+/* Style for the radio dot when checked */
+.radio-dot:checked {
+  background-color: #2196F3;
+}
+
+/* Style for the radio dot inner dot */
+.radio-dot:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Style for the radio dot inner dot when checked */
+.radio-dot:checked:after {
+  display: block;
+}
+
+/* Style for the radio dot inner dot */
+.radio-dot:after {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.X {
+  display: flex;
+  justify-content: space-evenly
+}

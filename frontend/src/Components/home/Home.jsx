@@ -7,7 +7,7 @@ function Home() {
   const [comp1, setComp1] = useState([]);
   let navigate = useNavigate();
   useEffect(() => {
-    fetch("http://localhost:4001/first")
+    fetch("http://localhost:3000/first")
       .then(res => res.json())
       .then(UserList1 => setComp1(UserList1));
   }, []);

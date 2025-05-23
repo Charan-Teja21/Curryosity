@@ -12,7 +12,7 @@ function UserRegister() {
     let [err,setErr]=useState('')
     //let navigate = useNavigate();
     async function handleFormSubmit(newUser) {
-        newUser.userImage=null;
+        console.log(newUser)
         const res = await axios.post('http://localhost:4000/user', newUser)
         console.log(res)
         if(res.data.message==="User Created")

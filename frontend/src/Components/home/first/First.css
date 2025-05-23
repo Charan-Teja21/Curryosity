@@ -1,13 +1,12 @@
 .card2 {
-  padding: 20px;
-  max-width: 350px;
+  width: 18rem;           /* Fixed width */
+  height: 26rem;          /* Fixed height */
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
-  background-color: #ffffff;
-  transition: transform 0.3s, box-shadow 0.3s;
-  border: none;
+  justify-content: space-between;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .card2:hover {
@@ -17,8 +16,10 @@
 
 .img1 {
   width: 100%;
-  border-radius: 15px;
+  height: 200px;          /* Fixed image height */
   object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 
 .zx {
@@ -30,21 +31,32 @@
 }
 
 .card-body {
-  padding: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+  overflow: hidden;
 }
 
 .info {
   text-align: left;
 }
 
-.b {
+.info .b {
   font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 10px;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
 }
 
-.text-start {
+.info .text-start {
+  font-size: 0.95rem;
   color: #555;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;   /* Show max 3 lines */
+  -webkit-box-orient: vertical;
 }
 
 .cnt {

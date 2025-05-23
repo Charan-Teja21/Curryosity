@@ -19,7 +19,7 @@ function Recipe() {
   useEffect(() => {
     async function fetchRecipe() {
       try {
-        let res = await axios.get(`http://localhost:4000/recipe/${recipeid}`);
+        let res = await axios.get(`http://localhost:4000/recip/${recipeid}`);
         console.log(recipeid)
         setRecipe(res.data.payload);
       } catch (error) {
@@ -52,6 +52,9 @@ function Recipe() {
   async function handleFormSubmit(newReview) {
     await axios.post(`http://localhost:4000/review/${recipeid}`, newReview);
     alert('Your review posted successfully!');
+    // Refresh the recipe data to show the new review
+    const res = await axios.get(`http://localhost:4000/recip/${recipeid}`);
+    setRecipe(res.data.payload);
   }
 
   if (!recipe) return <p>Loading...</p>;
@@ -130,18 +133,38 @@ function Recipe() {
       {recipe.reviews.length === 0 ? (
         <img src="https://support.junglescout.com/hc/article_attachments/17368236344855" style={{marginTop:20}} alt="No reviews yet" />
       ) : (
-        <div className='mb-3 ms-5 pt-1 pb-1'>
-          {recipe.reviews.map((ele, index) => (
-            <li className='d-flex' key={index}>
-              <p>➡️</p>
-              {Array.from({ length: ele.rating }).map((_, i) => <span style={{paddingTop:1}}><FaStar key={i} /></span> )}
-              <p>{ele.review}</p>
-            </li>
-          ))}
+        <div className="reviews-section mb-3 ms-5 pt-1 pb-1">
+          <h3 className="mb-4">User Reviews</h3>
+          <div className="row row-cols-1 row-cols-md-2 g-4">
+            {recipe.reviews.map((ele, index) => (
+              <div className="col" key={index}>
+                <div className="review-card p-3 mb-3 shadow-sm rounded" style={{
+                  background: "linear-gradient(135deg,rgb(246, 219, 178) 20%, #fff 80%)",
+                  borderLeft: "6px solid rgb(239, 147, 9)",
+                  minHeight: "120px"
+                }}>
+                  <div className="d-flex align-items-center mb-2">
+                    <span className="fw-bold me-2" style={{color: "#6366f1"}}>
+                      {ele.username ? ele.username : `Reviewer ${index + 1}`}
+                    </span>
+                    <span>
+                      {Array.from({ length: Math.floor(ele.rating) }).map((_, i) => (
+                        <FaStar key={i} style={{ color: "#fbbf24", marginRight: 2 }} />
+                      ))}
+                      {ele.rating % 1 !== 0 && <FaRegStarHalfStroke style={{ color: "#fbbf24" }} />}
+                    </span>
+                  </div>
+                  <div className="review-text" style={{fontSize: "1.05rem", color: "#374151"}}>
+                    {ele.review}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>
   );
 }
 
-export default Recipe; 
+export default Recipe;

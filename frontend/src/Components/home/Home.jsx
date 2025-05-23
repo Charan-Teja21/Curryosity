@@ -53,20 +53,13 @@ function Home() {
         </div>
       </div>
       <div className="main2">
-        <div className="d-flex justify-content-between">
-          <h3
-            className="mt-3 ms-3 bg-white d-inline p-2"
+        <div className="container ">
+          <h1
+            className="mt-3 ms-3 d-block mx-auto text-center p-2"
             style={{ borderRadius: 15 }}
           >
             Famous Recipes
-          </h3>
-          <button
-            className="m-3 p-2 bg-dark text-white"
-            onClick={handleView}
-            style={{ borderRadius: 50 }}
-          >
-            View All
-          </button>
+          </h1>
         </div>
         <div className="Nonveg container d-flex justify-content-evenly mx-auto">
           <div className="row ff">
@@ -76,6 +69,15 @@ function Home() {
               </div>
             ))}
           </div>
+        </div>
+        <div>
+          <button
+            className="m-3 p-2 d-block btn mx-auto bg-dark text-white"
+            onClick={handleView}
+            style={{ borderRadius: 50 }}
+          >
+            View All
+          </button>
         </div>
       </div>
     </div>

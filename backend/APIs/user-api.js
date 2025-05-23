@@ -42,6 +42,7 @@ userApp.use((req, res, next) => {
 userApp.post('/user', expressAsyncHandler(async (req, res) => {
   // get user resource from client
   const newUser = req.body;
+  console.log(newUser);
 
   // check for duplicate username
   const dbUser = await userscollection.findOne({ username: newUser.username });
@@ -183,7 +184,7 @@ userApp.post('/review/:recipeId',expressAsyncHandler(async(req,res)=>{
 }))
 
 // get recipe by recipeid
-userApp.get('/recipe/:recipeId',expressAsyncHandler(async(req,res)=>{
+userApp.get('/recip/:recipeId',expressAsyncHandler(async(req,res)=>{
   // get reviewId by url parameter
   const recipeIdFromUrl = (req.params.recipeId);
   // find the recipe by its id
@@ -192,17 +193,17 @@ userApp.get('/recipe/:recipeId',expressAsyncHandler(async(req,res)=>{
   res.send({message:"recipe",payload:result})
 }))
 
-//update user image
-userApp.put('/updateimage/:username',expressAsyncHandler(async(req,res)=>{
-  // get user's username from url
-  const userName=req.params.username
-  // get user's image from body
-  const userImae=req.body
-  // update user's image
-  console.log(userImae);
-  const result=await userscollection.updateOne({username:userName},{$set:{userImage:userImae.imgUrl}})
-  res.send({message:"image updated"})
-  }))
+// //update user image
+// userApp.put('/updateimage/:username',expressAsyncHandler(async(req,res)=>{
+//   // get user's username from url
+//   const userName=req.params.username
+//   // get user's image from body
+//   const userImae=req.body
+//   // update user's image
+//   console.log(userImae);
+//   const result=await userscollection.updateOne({username:userName},{$set:{userImage:userImae.imgUrl}})
+//   res.send({message:"image updated"})
+//   }))
 
 //
 userApp.post(

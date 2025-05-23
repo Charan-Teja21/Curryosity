@@ -19,24 +19,17 @@ export const userLoginThunk = createAsyncThunk("user-login", async (userCredObj,
   }
 });
 
-// Action to update user image
-export const updateUserImage = createAsyncThunk("update-user-image", async (imageUrl, thunkApi) => {
-    try {
-      // Get current user from the state
-      const { currentUser } = thunkApi.getState().user;
-  
-      // Assuming you have an endpoint to update the user image
-      const res = await axios.patch(`http://localhost:4000/updateimage/${currentUser.username}`, { imageUrl });
-  
-      if (res.data.message === "Image Updated") {
-        return { imageUrl };
-      } else {
-        return thunkApi.rejectWithValue(res.data.message);
-      }
-    } catch (err) {
-      return thunkApi.rejectWithValue(err);
-    }
-  });
+// NEW: Fetch user by username thunk
+export const fetchUserByUsername = createAsyncThunk("user/fetchByUsername", async (username, thunkApi) => {
+  try {
+    const res = await axios.get(`http://localhost:4000/user/${username}`);
+    // Update localStorage as well
+    localStorage.setItem("user", JSON.stringify(res.data.user));
+    return res.data.user;
+  } catch (err) {
+    return thunkApi.rejectWithValue(err.response?.data || err.message);
+  }
+});
 
 export const userSlice = createSlice({
   name: "user-login",
@@ -73,6 +66,10 @@ export const userSlice = createSlice({
       state.loginUserStatus = false;
       state.errMsg = action.payload;
       state.errorOccurred = true;
+    })
+    // Handle fetchUserByUsername
+    .addCase(fetchUserByUsername.fulfilled, (state, action) => {
+      state.currentUser = action.payload;
     })
 });
 

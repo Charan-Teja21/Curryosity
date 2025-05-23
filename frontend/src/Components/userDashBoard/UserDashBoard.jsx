@@ -100,6 +100,7 @@ function UserDashBoard() {
           </div>
         </div>
       </div>
+      {recipe.length>0&&(
       <div>
         <br />
         <h2 className="head2">Posted Recipes</h2>
@@ -134,6 +135,8 @@ function UserDashBoard() {
           })}
         </div>
       </div>
+       )}
+       {deletedRecipe.length>0&&(
       <div>
         <br />
         <h2 className="head2">Deleted Recipes</h2>
@@ -168,6 +171,7 @@ function UserDashBoard() {
           })}
         </div>
       </div>
+        )}
     </div>
   );
 }

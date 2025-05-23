@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import './Form.css';
 import { useSelector } from 'react-redux';
-
+import { useNavigate } from 'react-router-dom';
 function RecipeForm() {
     let { register, handleSubmit, formState: { errors } } = useForm();
+      let navigate = useNavigate();
     let {loginUserStatus,errorOccurred,errMsg,currentUser}=useSelector(state=>state.useruserLoginReducer)
+    let [stat, setStat] = useState(null);
     const currentDate = new Date();
 const isoString = currentDate.toISOString();
+  useEffect(() => {
+    if (stat !== null) navigate('/dashboard');
+  }, [stat]);
     async function handleFormSubmit(newUser) {
         newUser.ingredients=newUser.ingredients.split(',')
         newUser.ingredients = newUser.ingredients.map(ingredient => ingredient.trim());
@@ -20,6 +25,11 @@ const isoString = currentDate.toISOString();
         newUser.dateOfCreation = new Date().toISOString();
         newUser.dateOfModification = new Date().toISOString();
         let res=await axios.post(`http://localhost:4000/recipe`,newUser);
+        alert("New recipe added successfully");
+        if(stat===true)
+        setStat(false);
+        else
+        setStat(true);
        console.log(res.data.message);
     }
 

@@ -1,6 +1,7 @@
 //create user-api app
 const exp = require("express")
 const userApp = exp.Router();
+const multer = require('multer');
 const bcryptjs = require("bcryptjs");
 const expressAsyncHandler = require("express-async-handler");
 const jwt = require("jsonwebtoken");
@@ -8,10 +9,24 @@ const verifyToken = require("../middlewares/verifyToken")
 // const commonApp = require("./common-api");
 require('dotenv').config()
 
+//
+// Configure multer for in-memory storage
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+//
+
+
 //get userscollection 
 let userscollection;
 userApp.use((req, res, next) => {
   userscollection = req.app.get("userscollection");
+  next();
+})
+
+//get orderscollection
+let orderscollection;
+userApp.use((req, res, next) => {
+  orderscollection = req.app.get("orderscollection");
   next();
 })
 
@@ -126,6 +141,17 @@ userApp.get('/recipes/:username',expressAsyncHandler(async(req,res)=>{
   res.send({message:"List of recipes",payload:recipesList})
 }))
 
+// get orders of all users
+userApp.get('/orders',expressAsyncHandler(async(req,res)=>{
+  // get orderscollection form express app
+  const orderscollection = req.app.get('orderscollection')
+  // get all orders
+  let orderList = await orderscollection.find().toArray()
+  // send res
+  res.send({ message: "orders", payload: orderList })
+}
+))
+
 // restore an recipe by recipe id
 userApp.put('/restorerecipe/:recipeid',expressAsyncHandler(async(req,res)=>{
    // get recipeid from url
@@ -177,6 +203,45 @@ userApp.put('/updateimage/:username',expressAsyncHandler(async(req,res)=>{
   const result=await userscollection.updateOne({username:userName},{$set:{userImage:userImae.imgUrl}})
   res.send({message:"image updated"})
   }))
+
+//
+userApp.post(
+  '/upload-profile-image/:username',
+  upload.single('profileImage'),
+  expressAsyncHandler(async (req, res) => {
+    const username = req.params.username;
+    const image = req.file;
+
+    if (!image) {
+      return res.status(400).send({ message: 'No image provided' });
+    }
+
+    // Prepare image as base64 string with content type
+    const imageData = {
+      data: image.buffer.toString('base64'),
+      contentType: image.mimetype,
+    };
+
+    await userscollection.updateOne(
+      { username },
+      { $set: { profileImage: imageData } }
+    );
+
+    res.send({ message: 'Image uploaded successfully' });
+  })
+);
+
+userApp.get('/user/:username', expressAsyncHandler(async (req, res) => {
+  const username = req.params.username;
+  const user = await userscollection.findOne({ username });
+  if (!user) {
+    return res.status(404).send({ message: 'User not found' });
+  }
+  res.send({ user });
+}));
+//
+
+
 
 //export user App
 module.exports = userApp;

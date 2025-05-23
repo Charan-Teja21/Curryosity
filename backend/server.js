@@ -21,6 +21,9 @@ mongoClient.connect(process.env.DB_URL)
     //get collection obj
     const userscollection = recipedb.collection("userscollection")
     const recipescollection=recipedb.collection("recipescollection");
+    const orderscollection=recipedb.collection("first");
+    //share collection obj with exp app
+    app.set("orderscollection",orderscollection);
       //share collection obj with exp app
       app.set("userscollection",userscollection);
       app.set("recipescollection",recipescollection);

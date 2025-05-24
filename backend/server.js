@@ -22,11 +22,13 @@ mongoClient.connect(process.env.DB_URL)
     const userscollection = recipedb.collection("userscollection")
     const recipescollection=recipedb.collection("recipescollection");
     const orderscollection=recipedb.collection("first");
+    const chatcollection = recipedb.collection('chatcollection');
     //share collection obj with exp app
     app.set("orderscollection",orderscollection);
       //share collection obj with exp app
       app.set("userscollection",userscollection);
       app.set("recipescollection",recipescollection);
+      app.set('chatcollection', chatcollection);
       //confirm connection status
       console.log("DB is connected");
   })

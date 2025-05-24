@@ -61,7 +61,7 @@ function Navbar() {
               <NavLink to='/explore'>Explore</NavLink>
             </li>
             <li>
-              <NavLink to='/community'>My AI</NavLink>
+              <NavLink to='/community'>Community</NavLink>
             </li>
             <li>
               <NavLink to='/dashboard'>{currentUser.username}

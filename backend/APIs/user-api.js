@@ -37,6 +37,13 @@ userApp.use((req, res, next) => {
   next();
 })
 
+//Get chat collection
+let chatcollection;
+userApp.use((req, res, next) => {
+  chatcollection = req.app.get("chatcollection");
+  next();
+});
+
 //user registration route
 // user registration route
 userApp.post('/user', expressAsyncHandler(async (req, res) => {
@@ -240,9 +247,25 @@ userApp.get('/user/:username', expressAsyncHandler(async (req, res) => {
   }
   res.send({ user });
 }));
-//
 
+// Get all chat messages (public)
+userApp.get('/community/messages', expressAsyncHandler(async (req, res) => {
+  const messages = await chatcollection.find().sort({ timestamp: 1 }).toArray();
+  res.send({ messages });
+}));
 
+// Post a new chat message (authenticated)
+userApp.post('/community/message', verifyToken, expressAsyncHandler(async (req, res) => {
+  const { username, message } = req.body;
+  if (!message || !username) return res.status(400).send({ message: "Invalid" });
+  const chatMsg = {
+    username,
+    message,
+    timestamp: new Date()
+  };
+  await chatcollection.insertOne(chatMsg);
+  res.send({ message: "Message sent" });
+}));
 
 //export user App
 module.exports = userApp;

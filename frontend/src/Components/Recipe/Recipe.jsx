@@ -19,7 +19,7 @@ function Recipe() {
   useEffect(() => {
     async function fetchRecipe() {
       try {
-        let res = await axios.get(`http://localhost:4000/recip/${recipeid}`);
+        let res = await axios.get(`/recip/${recipeid}`);
         console.log(recipeid)
         setRecipe(res.data.payload);
       } catch (error) {
@@ -36,24 +36,24 @@ function Recipe() {
 
   // Delete Recipe
   async function handleDelete() {
-    await axios.put(`http://localhost:4000/recipe/${recipeid}`, recipe);
+    await axios.put(`/recipe/${recipeid}`, recipe);
     setStat(false);
     alert('Deleted the recipe!');
   }
 
   // Restore Recipe
   async function handleRestore() {
-    await axios.put(`http://localhost:4000/restorerecipe/${recipeid}`, recipe);
+    await axios.put(`/restorerecipe/${recipeid}`, recipe);
     setStat(true);
     alert('Restored the recipe!');
   }
 
   // Submit Review
   async function handleFormSubmit(newReview) {
-    await axios.post(`http://localhost:4000/review/${recipeid}`, newReview);
+    await axios.post(`/review/${recipeid}`, newReview);
     alert('Your review posted successfully!');
     // Refresh the recipe data to show the new review
-    const res = await axios.get(`http://localhost:4000/recip/${recipeid}`);
+    const res = await axios.get(`/recip/${recipeid}`);
     setRecipe(res.data.payload);
   }
 

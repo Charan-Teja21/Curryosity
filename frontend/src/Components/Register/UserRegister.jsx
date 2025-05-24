@@ -13,7 +13,7 @@ function UserRegister() {
     //let navigate = useNavigate();
     async function handleFormSubmit(newUser) {
         console.log(newUser)
-        const res = await axios.post('http://localhost:4000/user', newUser)
+        const res = await axios.post('/user', newUser)
         console.log(res)
         if(res.data.message==="User Created")
         navigate('/login')

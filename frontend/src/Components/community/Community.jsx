@@ -16,7 +16,7 @@ function App() {
 
   // Fetch messages
   const fetchMessages = async () => {
-    const res = await axios.get("http://localhost:4000/community/messages");
+    const res = await axios.get("/community/messages");
     setMessages(res.data.messages);
   };
 
@@ -33,7 +33,7 @@ function App() {
     setSending(true);
     try {
       await axios.post(
-        "http://localhost:4000/community/message",
+        "/community/message",
         {
           username: currentUser.username,
           message: input,

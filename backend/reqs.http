@@ -1,5 +1,5 @@
 # User register
-Post http://localhost:4000/user
+Post /user
 Content-Type: application/json
 
 {
@@ -14,7 +14,7 @@ Content-Type: application/json
 }
 
 ### User login
-POST http://localhost:4000/login
+POST /login
 Content-Type: application/json
 
 {
@@ -23,7 +23,7 @@ Content-Type: application/json
 }
 
 ### Posting recipe
-POST http://localhost:4000/recipe
+POST /recipe
 Content-Type: application/json
 
 {
@@ -57,10 +57,10 @@ Content-Type: application/json
 }
 
 ###get all recipes
-GET http://localhost:4000/recipe
+GET /recipe
 
 ###update recipe by user
-PUT http://localhost:4000/recipe
+PUT /recipe
 Content-Type: application/json
 
 {
@@ -81,7 +81,7 @@ Content-Type: application/json
 }
 
 ###delete recipe by id
-PUT http://localhost:4000/recipe/1711097684
+PUT /recipe/1711097684
 Content-Type: application/json
 
 {
@@ -102,10 +102,10 @@ Content-Type: application/json
 }
 
 ###get recipes of user
-GET  http://localhost:4000/recipes/ravi
+GET  /recipes/ravi
 
 ### restore recipe by id
-PUT http://localhost:4000/restorerecipe/1711097684
+PUT /restorerecipe/1711097684
 Content-Type: application/json
 
 {
@@ -126,10 +126,10 @@ Content-Type: application/json
 }
 
 ###Read deleated by user
-GET http://localhost:4000/deletedRecipes/ravi
+GET /deletedRecipes/ravi
 
 ### review by a user
-POST http://localhost:4000/review/1711130091
+POST /review/1711130091
 Content-Type: application/json
 
 {
@@ -138,4 +138,4 @@ Content-Type: application/json
 }
 
 ### get recipe from recipe id
-GET http://localhost:4000/recipe/1711130091
+GET /recipe/1711130091

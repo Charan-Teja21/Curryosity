@@ -24,7 +24,7 @@ const isoString = currentDate.toISOString();
         newUser.recipeid=Date.now().toString();
         newUser.dateOfCreation = new Date().toISOString();
         newUser.dateOfModification = new Date().toISOString();
-        let res=await axios.post(`http://localhost:4000/recipe`,newUser);
+        let res=await axios.post(`/recipe`,newUser);
         alert("New recipe added successfully");
         if(stat===true)
         setStat(false);

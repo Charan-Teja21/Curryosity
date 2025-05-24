@@ -2,7 +2,7 @@
 const exp = require("express");
 const app = exp()
 const path = require("path")
-require('dotenv').config()
+require('dotenv').config({ path: require('path').resolve(__dirname, '../.env') })
 
 // deploy react build in this server
 app.use(exp.static(path.join(__dirname, "../frontend/build")))

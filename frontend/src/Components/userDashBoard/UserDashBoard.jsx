@@ -23,9 +23,9 @@ function UserDashBoard() {
   }
 
   async function getRecipeByUser() {
-    const res = await axios.get(`http://localhost:4000/recipes/${currentUser.username}`);
+    const res = await axios.get(`/recipes/${currentUser.username}`);
     setRecipe(res.data.payload);
-    const res1 = await axios.get(`http://localhost:4000/deletedRecipes/${currentUser.username}`);
+    const res1 = await axios.get(`/deletedRecipes/${currentUser.username}`);
     setDeletedRecipe(res1.data.payload);
   }
 
@@ -42,7 +42,7 @@ function UserDashBoard() {
 
     try {
       await axios.post(
-        `http://localhost:4000/upload-profile-image/${currentUser.username}`,
+        `/upload-profile-image/${currentUser.username}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

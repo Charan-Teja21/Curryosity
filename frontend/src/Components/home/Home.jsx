@@ -9,7 +9,7 @@ function Home() {
   let navigate = useNavigate();
   const getAllRecipes = async () => {
     try {
-      let res = await axios.get("http://localhost:4000/orders");
+      let res = await axios.get("/orders");
       setComp1(res.data.payload);
       console.log(comp1);
     } catch (error) {

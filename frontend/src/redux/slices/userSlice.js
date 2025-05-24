@@ -5,7 +5,7 @@ import axios from "axios";
 // slices/userSlice.js
 export const userLoginThunk = createAsyncThunk("user-login", async (userCredObj, thunkApi) => {
   try {
-    const res = await axios.post("http://localhost:4000/login", userCredObj);
+    const res = await axios.post("/login", userCredObj);
     if (res.data.message === "Login Success") {
       // Store token and user in localStorage
       localStorage.setItem("token", res.data.token);
@@ -22,7 +22,7 @@ export const userLoginThunk = createAsyncThunk("user-login", async (userCredObj,
 // NEW: Fetch user by username thunk
 export const fetchUserByUsername = createAsyncThunk("user/fetchByUsername", async (username, thunkApi) => {
   try {
-    const res = await axios.get(`http://localhost:4000/user/${username}`);
+    const res = await axios.get(`/user/${username}`);
     // Update localStorage as well
     localStorage.setItem("user", JSON.stringify(res.data.user));
     return res.data.user;

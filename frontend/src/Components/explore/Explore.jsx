@@ -22,7 +22,7 @@ function Explore() {
 
   const getAllRecipes = async () => {
     try {
-      let res = await axios.get('http://localhost:4000/recipe');
+      let res = await axios.get('/recipe');
       setRecipes(res.data.payload);
     } catch (error) {
       console.error("Error fetching recipes:", error);

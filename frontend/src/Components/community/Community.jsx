@@ -256,7 +256,7 @@ function App() {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
       );
-      fetchRequests();
+      adaptiveFetchRequests(); // <-- USE THIS
       setRequestStatus(action === "accept" ? "accepted" : "rejected");
       toast.success(`Request ${action}ed`);
     } catch (err) {
@@ -714,7 +714,7 @@ function App() {
                   );
                   setRequestStatus("rejected");
                   toast.info("Access revoked. You can send a new request to chat again.");
-                  fetchRequests();
+                  adaptiveFetchRequests(); // <-- USE THIS
                 } catch (err) {
                   toast.error("Failed to revoke access");
                 }

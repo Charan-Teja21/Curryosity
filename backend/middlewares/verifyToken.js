@@ -1,20 +1,17 @@
-const jwt=require('jsonwebtoken')
-require('dotenv').config()
-function verifyToken(req,res,next){
-  // get bearer token from headers of req
-  const bearerToken=req.headers.authorization;
-  // if bearer token not available
-  if(!bearerToken){
-    return res.send({message:"Unathorized access. Plz login to continue"})
-  }
-  // extract token from bearer token
-  const token=bearerToken.split(' ')[1]
-  try{
-    jwt.verify(token,process.env.SECRET_KEY)
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
+
+function verifyToken(req, res, next) {
+  const token = req.headers.authorization?.split(" ")[1];
+  if (!token) return res.status(401).send({ message: "No token provided" });
+  try {
+    const decoded = jwt.verify(token, process.env.SECRET_KEY);
+    req.user = decoded;
+    //console.log("verifyToken:", req.user); // <-- Add this line
     next();
-  }catch(err){
-    next(err);
+  } catch (err) {
+    return res.status(401).send({ message: "Invalid token" });
   }
 }
 
-module.exports=verifyToken;
+module.exports = verifyToken;

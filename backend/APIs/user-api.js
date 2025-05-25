@@ -248,6 +248,158 @@ userApp.get('/user/:username', expressAsyncHandler(async (req, res) => {
   res.send({ user });
 }));
 
+// Get all users (for dropdown, exclude password and sensitive info)
+userApp.get('/users', expressAsyncHandler(async (req, res) => {
+  const users = await userscollection.find({}, { projection: { password: 0 } }).toArray();
+  res.send({ users });
+}));
+
+// Get all personal messages between current user and another user
+userApp.get('/personal/messages/:otherUser', verifyToken, expressAsyncHandler(async (req, res) => {
+  const currentUser = req.user.username;
+  const otherUser = req.params.otherUser;
+  const personalCollection = req.app.get('personalcollection');
+  const messages = await personalCollection.find({
+    $or: [
+      { from: currentUser, to: otherUser },
+      { from: otherUser, to: currentUser }
+    ]
+  }).sort({ timestamp: 1 }).toArray();
+  res.send({ messages });
+}));
+
+// Send a personal message
+userApp.post('/personal/message', verifyToken, expressAsyncHandler(async (req, res) => {
+  const currentUser = req.user.username;
+  const { to, message } = req.body;
+  if (!to || !message) return res.status(400).send({ message: "Invalid" });
+  const personalCollection = req.app.get('personalcollection');
+  await personalCollection.insertOne({
+    from: currentUser,
+    to,
+    message,
+    timestamp: new Date()
+  });
+  res.send({ message: "Personal message sent" });
+}));
+
+// Send a personal chat request
+userApp.post('/personal/request', verifyToken, expressAsyncHandler(async (req, res) => {
+  const currentUser = req.user.username;
+  const { to } = req.body;
+  const requests = req.app.get('personalChatRequests');
+
+  // Check for existing request in either direction
+  const existing = await requests.findOne({
+    $or: [
+      { from: currentUser, to },
+      { from: to, to: currentUser }
+    ]
+  });
+
+  // Allow re-request if previously rejected
+  if (existing && existing.status === "rejected") {
+    await requests.updateOne(
+      { _id: existing._id },
+      { $set: { from: currentUser, to, status: "pending" } }
+    );
+    return res.send({ message: "Request sent again" });
+  }
+
+  if (existing) return res.status(400).send({ message: "Request already sent or exists" });
+
+  await requests.insertOne({ from: currentUser, to, status: "pending" });
+  res.send({ message: "Request sent" });
+}));
+
+// Get all personal chat requests for the logged-in user
+userApp.get('/personal/requests', verifyToken, expressAsyncHandler(async (req, res) => {
+  const currentUser = req.user.username;
+  const requests = req.app.get('personalChatRequests');
+  const incoming = await requests.find({ to: currentUser }).toArray();
+  const outgoing = await requests.find({ from: currentUser }).toArray();
+  res.send({ incoming, outgoing });
+}));
+
+// Accept or reject a personal chat request
+userApp.post('/personal/request/respond', verifyToken, expressAsyncHandler(async (req, res) => {
+  const currentUser = req.user.username;
+  const { from, action } = req.body; // action: "accept" or "reject"
+  const requests = req.app.get('personalChatRequests');
+  // Update both directions
+  await requests.updateMany(
+    {
+      $or: [
+        { from, to: currentUser },
+        { from: currentUser, to: from }
+      ]
+    },
+    { $set: { status: action === "accept" ? "accepted" : "rejected" } }
+  );
+  res.send({ message: `Request ${action}ed` });
+}));
+
+// Revoke access (reject) to a personal chat
+userApp.post('/personal/request/revoke', verifyToken, expressAsyncHandler(async (req, res) => {
+  const currentUser = req.user.username;
+  const { otherUser } = req.body;
+  const requests = req.app.get('personalChatRequests');
+  // Either user can revoke: set status to "rejected" for both directions if accepted
+  await requests.updateMany(
+    {
+      $or: [
+        { from: currentUser, to: otherUser, status: "accepted" },
+        { from: otherUser, to: currentUser, status: "accepted" }
+      ]
+    },
+    { $set: { status: "rejected" } }
+  );
+  res.send({ message: "Access revoked" });
+}));
+
+// Middleware to check if chat is accepted
+async function isChatAccepted(req, res, next) {
+  const currentUser = req.user.username;
+  const otherUser = req.params.otherUser || req.body.to;
+  const requests = req.app.get('personalChatRequests');
+  const accepted = await requests.findOne({
+    $or: [
+      { from: currentUser, to: otherUser, status: "accepted" },
+      { from: otherUser, to: currentUser, status: "accepted" }
+    ]
+  });
+  if (!accepted) return res.status(403).send({ message: "Chat not accepted" });
+  next();
+}
+
+// Use isChatAccepted in /personal/messages/:otherUser and /personal/message
+userApp.get('/personal/messages/:otherUser', verifyToken, isChatAccepted, expressAsyncHandler(async (req, res) => {
+  const currentUser = req.user.username;
+  const otherUser = req.params.otherUser;
+  const personalCollection = req.app.get('personalcollection');
+  const messages = await personalCollection.find({
+    $or: [
+      { from: currentUser, to: otherUser },
+      { from: otherUser, to: currentUser }
+    ]
+  }).sort({ timestamp: 1 }).toArray();
+  res.send({ messages });
+}));
+
+userApp.post('/personal/message', verifyToken, isChatAccepted, expressAsyncHandler(async (req, res) => {
+  const currentUser = req.user.username;
+  const { to, message } = req.body;
+  if (!to || !message) return res.status(400).send({ message: "Invalid" });
+  const personalCollection = req.app.get('personalcollection');
+  await personalCollection.insertOne({
+    from: currentUser,
+    to,
+    message,
+    timestamp: new Date()
+  });
+  res.send({ message: "Personal message sent" });
+}));
+
 // Get all chat messages (public)
 userApp.get('/community/messages', expressAsyncHandler(async (req, res) => {
   const messages = await chatcollection.find().sort({ timestamp: 1 }).toArray();

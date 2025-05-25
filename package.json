@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "json-server": "^1.0.0-beta.3"
+    "json-server": "^1.0.0-beta.3",
+    "react-toastify": "^11.0.5"
   },
   "proxy": "http://localhost:4000"
 }

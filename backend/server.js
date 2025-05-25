@@ -20,15 +20,19 @@ mongoClient.connect(process.env.DB_URL)
     const recipedb = client.db('recipedb');
     //get collection obj
     const userscollection = recipedb.collection("userscollection")
-    const recipescollection=recipedb.collection("recipescollection");
-    const orderscollection=recipedb.collection("first");
+    const recipescollection = recipedb.collection("recipescollection");
+    const orderscollection = recipedb.collection("first");
     const chatcollection = recipedb.collection('chatcollection');
+    const personalcollection = recipedb.collection('personalcollection');
+    const personalChatRequests = recipedb.collection('personalChatRequests');
     //share collection obj with exp app
     app.set("orderscollection",orderscollection);
       //share collection obj with exp app
       app.set("userscollection",userscollection);
       app.set("recipescollection",recipescollection);
       app.set('chatcollection', chatcollection);
+      app.set('personalcollection', personalcollection);
+      app.set('personalChatRequests', personalChatRequests);
       //confirm connection status
       console.log("DB is connected");
   })

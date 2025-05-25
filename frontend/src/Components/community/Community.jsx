@@ -239,7 +239,7 @@ function App() {
         }
       );
       setRequestStatus("pending");
-      fetchRequests();
+      adaptiveFetchRequests();
       toast.success("Chat request sent!");
     } catch (err) {
       toast.error(err.response?.data?.message || "Failed to send request");
@@ -262,6 +262,17 @@ function App() {
     } catch (err) {
       toast.error("Failed to update request");
     }
+  };
+
+  // Adaptive request fetching
+  const adaptiveFetchRequests = () => {
+    fetchRequests();
+    let count = 0;
+    const fastInterval = setInterval(() => {
+      fetchRequests();
+      count++;
+      if (count > 10) clearInterval(fastInterval); // 5 seconds at 500ms
+    }, 500);
   };
 
   useEffect(() => {

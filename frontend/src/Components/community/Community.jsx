@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
@@ -51,7 +51,7 @@ function App() {
   };
 
   // Fetch requests
-  const fetchRequests = async () => {
+  const fetchRequests = useCallback(async () => {
     if (!loginUserStatus) return;
     const res = await axios.get("/personal/requests", {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -60,7 +60,7 @@ function App() {
       incoming: res.data.incoming || [],
       outgoing: res.data.outgoing || [],
     });
-  };
+  }, [loginUserStatus]);
 
   useEffect(() => {
     if (personalMode && loginUserStatus) {
@@ -105,11 +105,11 @@ function App() {
   useEffect(() => {
     if (loginUserStatus) {
       fetchRequests();
-      const interval = setInterval(fetchRequests, 2000);
+      const interval = setInterval(fetchRequests, 1000); // 1 second is enough
       return () => clearInterval(interval);
     }
     // eslint-disable-next-line
-  }, [loginUserStatus]);
+  }, [loginUserStatus, personalMode, selectedUser, showUserModal]);
 
   // Send message (community or personal)
   const handleSend = async (e) => {
@@ -318,11 +318,11 @@ function App() {
   useEffect(() => {
     if (loginUserStatus) {
       fetchRequests();
-      const interval = setInterval(fetchRequests, 2000);
+      const interval = setInterval(fetchRequests, 1000); // 1 second is enough
       return () => clearInterval(interval);
     }
     // eslint-disable-next-line
-  }, [loginUserStatus]);
+  }, [loginUserStatus, personalMode, selectedUser, showUserModal]);
 
   return (
     <div

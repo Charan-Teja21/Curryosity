@@ -60,7 +60,9 @@ function App() {
       incoming: res.data.incoming || [],
       outgoing: res.data.outgoing || [],
     });
-  }, [loginUserStatus]);
+    // Dynamically update requestStatus based on backend
+    setRequestStatus(getRequestStatus(res.data, selectedUser));
+  }, [loginUserStatus, selectedUser]);
 
   useEffect(() => {
     if (personalMode && loginUserStatus) {
@@ -78,34 +80,34 @@ function App() {
     // eslint-disable-next-line
   }, [personalMode, selectedUser, loginUserStatus]);
 
-  // Check request status for selected user
-  useEffect(() => {
-    if (personalMode && selectedUser) {
-      const checkStatus = async () => {
-        await fetchRequests();
-        setTimeout(() => {
-          setRequests((prevRequests) => {
-            const outgoing = (prevRequests.outgoing || []).find((r) => r.to === selectedUser);
-            const incoming = (prevRequests.incoming || []).find((r) => r.from === selectedUser);
-            if (outgoing) setRequestStatus(outgoing.status);
-            else if (incoming) setRequestStatus(incoming.status);
-            else setRequestStatus("none");
-            return prevRequests;
-          });
-        }, 0);
-      };
-      checkStatus();
-    } else {
-      setRequestStatus("none");
-    }
-    // eslint-disable-next-line
-  }, [personalMode, selectedUser, loginUserStatus]);
+  // // Check request status for selected user
+  // useEffect(() => {
+  //   if (personalMode && selectedUser) {
+  //     const checkStatus = async () => {
+  //       await fetchRequests();
+  //       setTimeout(() => {
+  //         setRequests((prevRequests) => {
+  //           const outgoing = (prevRequests.outgoing || []).find((r) => r.to === selectedUser);
+  //           const incoming = (prevRequests.incoming || []).find((r) => r.from === selectedUser);
+  //           if (outgoing) setRequestStatus(outgoing.status);
+  //           else if (incoming) setRequestStatus(incoming.status);
+  //           else setRequestStatus("none");
+  //           return prevRequests;
+  //         });
+  //       }, 0);
+  //     };
+  //     checkStatus();
+  //   } else {
+  //     setRequestStatus("none");
+  //   }
+  //   // eslint-disable-next-line
+  // }, [personalMode, selectedUser, loginUserStatus]);
 
   // Poll for incoming/outgoing requests every 2 seconds for the logged-in user
   useEffect(() => {
     if (loginUserStatus) {
       fetchRequests();
-      const interval = setInterval(fetchRequests, 1000); // 1 second is enough
+      const interval = setInterval(fetchRequests, 1000);
       return () => clearInterval(interval);
     }
     // eslint-disable-next-line
@@ -238,7 +240,6 @@ function App() {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
       );
-      setRequestStatus("pending");
       adaptiveFetchRequests();
       toast.success("Chat request sent!");
     } catch (err) {
@@ -257,7 +258,7 @@ function App() {
         }
       );
       adaptiveFetchRequests(); // <-- USE THIS
-      setRequestStatus(action === "accept" ? "accepted" : "rejected");
+      //setRequestStatus(action === "accept" ? "accepted" : "rejected");
       toast.success(`Request ${action}ed`);
     } catch (err) {
       toast.error("Failed to update request");
@@ -274,6 +275,15 @@ function App() {
       if (count > 10) clearInterval(fastInterval); // 5 seconds at 500ms
     }, 500);
   };
+
+  function getRequestStatus(requests, selectedUser) {
+    if (!selectedUser) return "none";
+    const outgoing = (requests.outgoing || []).find((r) => r.to === selectedUser);
+    const incoming = (requests.incoming || []).find((r) => r.from === selectedUser);
+    if (outgoing) return outgoing.status;
+    if (incoming) return incoming.status;
+    return "none";
+  }
 
   useEffect(() => {
     if (personalMode && loginUserStatus) {
@@ -318,7 +328,7 @@ function App() {
   useEffect(() => {
     if (loginUserStatus) {
       fetchRequests();
-      const interval = setInterval(fetchRequests, 1000); // 1 second is enough
+      const interval = setInterval(fetchRequests, 1000);
       return () => clearInterval(interval);
     }
     // eslint-disable-next-line
@@ -712,7 +722,7 @@ function App() {
                     { otherUser: selectedUser },
                     { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
                   );
-                  setRequestStatus("rejected");
+                  //setRequestStatus("rejected");
                   toast.info("Access revoked. You can send a new request to chat again.");
                   adaptiveFetchRequests(); // <-- USE THIS
                 } catch (err) {

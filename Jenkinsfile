@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        nodejs "nodejs"   // must match name from Global Tool Config
+        nodejs "Jenkins test"   // must match name from Global Tool Config
     }
 
     environment {
